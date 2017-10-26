@@ -1,6 +1,6 @@
 {
   "name": "xstream-from-pull-stream",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Convert a pull stream to xstream",
   "main": "index.js",
   "typings": "index.d.ts",
