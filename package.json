@@ -4,6 +4,7 @@
   "description": "Convert a pull stream to xstream",
   "main": "index.js",
   "typings": "index.d.ts",
+  "homepage": "https://github.com/staltz/xstream-from-pull-stream",
   "scripts": {
     "compile": "tsc",
     "prepublishOnly": "npm run compile"
