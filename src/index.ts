@@ -1,7 +1,7 @@
-import xs, { Stream, Listener, Producer } from "xstream";
+import xs, {Stream, Listener, Producer} from 'xstream';
 
 function xsFromPullStream<T>(pullStream: any): Stream<T> {
-  const producer: Producer<T> & { isRunning: boolean } = {
+  const producer: Producer<T> & {isRunning: boolean} = {
     isRunning: false,
     start(listener: Listener<T>): void {
       const drain = function drain(read: Function) {
@@ -30,8 +30,9 @@ function xsFromPullStream<T>(pullStream: any): Stream<T> {
       }
     },
     stop(): void {
+      pullStream(true, () => {});
       producer.isRunning = false;
-    }
+    },
   };
 
   return xs.create(producer);

@@ -50,3 +50,17 @@ test('converts pull-stream end to xstream complete()', (t) => {
     },
   });
 });
+
+test('converts xstream cancellation to pull-stream abort', (t) => {
+  const stream = xsFromPullStream(function random(end, cb) {
+    if (end) {
+      t.pass('aborted');
+      cb(end);
+      t.end();
+    }
+  });
+  const sub = stream.subscribe({});
+  setTimeout(() => {
+    sub.unsubscribe();
+  });
+});
