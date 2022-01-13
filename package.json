@@ -4,6 +4,11 @@
   "description": "Convert a pull stream to xstream",
   "main": "index.js",
   "typings": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "index.js.map"
+  ],
   "homepage": "https://github.com/staltz/xstream-from-pull-stream",
   "scripts": {
     "compile": "tsc",
